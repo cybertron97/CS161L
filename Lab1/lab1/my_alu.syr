@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.03 secs
+Total CPU time to Xst completion: 0.04 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.03 secs
+Total CPU time to Xst completion: 0.04 secs
  
 --> 
 Reading design: my_alu.prj
@@ -71,7 +71,7 @@ Automatic Register Balancing       : No
 
 ---- Target Options
 Add IO Buffers                     : YES
-Global Maximum Fanout              : 500
+Global Maximum Fanout              : 100000
 Add Generic Clock Buffer(BUFG)     : 24
 Register Duplication               : YES
 Slice Packing                      : YES
@@ -140,19 +140,22 @@ WARNING:Xst:647 - Input <clk> is never used. This port will be preserved and lef
 WARNING:Xst:737 - Found 1-bit latch for signal <carryout>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <zero>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <overflow>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-    Found 16-bit comparator greater for signal <carryout$cmp_gt0000> created at line 61.
-    Found 16-bit comparator greater for signal <carryout$cmp_gt0001> created at line 61.
-    Found 16-bit comparator less for signal <carryout$cmp_lt0000> created at line 39.
-    Found 16-bit comparator less for signal <carryout$cmp_lt0001> created at line 39.
-    Found 16-bit xor2 for signal <old_result_5$xor0000> created at line 87.
-    Found 17-bit comparator greatequal for signal <overflow$cmp_ge0000> created at line 70.
-    Found 17-bit comparator less for signal <overflow$cmp_lt0000> created at line 70.
-    Found 17-bit comparator less for signal <overflow$cmp_lt0001> created at line 52.
-    Found 1-bit 8-to-1 multiplexer for signal <overflow$mux0000> created at line 36.
+    Found 17-bit comparator greater for signal <carryout$cmp_gt0000> created at line 63.
+    Found 17-bit comparator greater for signal <carryout$cmp_gt0001> created at line 63.
+    Found 17-bit comparator less for signal <carryout$cmp_lt0000> created at line 41.
+    Found 17-bit comparator less for signal <carryout$cmp_lt0001> created at line 41.
+    Found 17-bit comparator greatequal for signal <overflow$cmp_ge0000> created at line 72.
+    Found 17-bit comparator greatequal for signal <overflow$cmp_ge0001> created at line 76.
+    Found 17-bit comparator greatequal for signal <overflow$cmp_ge0002> created at line 54.
+    Found 17-bit comparator less for signal <overflow$cmp_lt0000> created at line 72.
+    Found 17-bit comparator less for signal <overflow$cmp_lt0001> created at line 76.
+    Found 17-bit comparator less for signal <overflow$cmp_lt0002> created at line 76.
+    Found 1-bit 8-to-1 multiplexer for signal <overflow$mux0000> created at line 38.
+    Found 16-bit xor2 for signal <r$xor0000> created at line 89.
     Summary:
 	inferred   4 Adder/Subtractor(s).
-	inferred   7 Comparator(s).
-	inferred  17 Multiplexer(s).
+	inferred  10 Comparator(s).
+	inferred   1 Multiplexer(s).
 Unit <my_alu> synthesized.
 
 
@@ -165,14 +168,12 @@ Macro Statistics
  16-bit subtractor                                     : 2
 # Latches                                              : 3
  1-bit latch                                           : 3
-# Comparators                                          : 7
- 16-bit comparator greater                             : 2
- 16-bit comparator less                                : 2
- 17-bit comparator greatequal                          : 1
- 17-bit comparator less                                : 2
-# Multiplexers                                         : 2
+# Comparators                                          : 10
+ 17-bit comparator greatequal                          : 3
+ 17-bit comparator greater                             : 2
+ 17-bit comparator less                                : 5
+# Multiplexers                                         : 1
  1-bit 8-to-1 multiplexer                              : 1
- 16-bit 8-to-1 multiplexer                             : 1
 # Xors                                                 : 1
  16-bit xor2                                           : 1
 
@@ -192,14 +193,10 @@ Macro Statistics
  16-bit subtractor                                     : 2
 # Latches                                              : 3
  1-bit latch                                           : 3
-# Comparators                                          : 7
- 16-bit comparator greater                             : 2
- 16-bit comparator less                                : 2
- 17-bit comparator greatequal                          : 1
- 17-bit comparator less                                : 2
-# Multiplexers                                         : 2
- 1-bit 8-to-1 multiplexer                              : 1
- 16-bit 8-to-1 multiplexer                             : 1
+# Comparators                                          : 10
+ 17-bit comparator greatequal                          : 3
+ 17-bit comparator greater                             : 2
+ 17-bit comparator less                                : 5
 # Xors                                                 : 1
  16-bit xor2                                           : 1
 
@@ -248,14 +245,14 @@ Design Statistics
 # IOs                              : 56
 
 Cell Usage :
-# BELS                             : 457
+# BELS                             : 437
 #      GND                         : 1
-#      LUT2                        : 144
-#      LUT3                        : 50
-#      LUT4                        : 22
-#      MUXCY                       : 124
-#      MUXF5                       : 35
-#      MUXF6                       : 16
+#      INV                         : 4
+#      LUT2                        : 130
+#      LUT3                        : 20
+#      LUT4                        : 85
+#      MUXCY                       : 128
+#      MUXF5                       : 4
 #      VCC                         : 1
 #      XORCY                       : 64
 # FlipFlops/Latches                : 3
@@ -272,8 +269,8 @@ Device utilization summary:
 
 Selected Device : 3s100etq144-5 
 
- Number of Slices:                      111  out of    960    11%  
- Number of 4 input LUTs:                216  out of   1920    11%  
+ Number of Slices:                      129  out of    960    13%  
+ Number of 4 input LUTs:                239  out of   1920    12%  
  Number of IOs:                          56
  Number of bonded IOBs:                  55  out of    108    50%  
     IOB Flip Flops:                       3
@@ -312,9 +309,9 @@ Timing Summary:
 Speed Grade: -5
 
    Minimum period: No path found
-   Minimum input arrival time before clock: 10.060ns
+   Minimum input arrival time before clock: 9.735ns
    Maximum output required time after clock: 4.114ns
-   Maximum combinational path delay: 10.788ns
+   Maximum combinational path delay: 10.380ns
 
 Timing Detail:
 --------------
@@ -322,33 +319,42 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'reset'
-  Total number of paths / destination ports: 4217 / 3
+  Total number of paths / destination ports: 4566 / 3
 -------------------------------------------------------------------------
-Offset:              10.060ns (Levels of Logic = 12)
-  Source:            A<1> (PAD)
+Offset:              9.735ns (Levels of Logic = 21)
+  Source:            A<0> (PAD)
   Destination:       zero (LATCH)
   Destination Clock: reset rising
 
-  Data Path: A<1> to zero
+  Data Path: A<0> to zero
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             9   1.106   0.849  A_1_IBUF (A_1_IBUF)
-     LUT2:I0->O            1   0.612   0.000  Msub__old_result_3_lut<1> (Msub__old_result_3_lut<1>)
-     MUXCY:S->O            1   0.404   0.000  Msub__old_result_3_cy<1> (Msub__old_result_3_cy<1>)
-     MUXCY:CI->O           1   0.051   0.000  Msub__old_result_3_cy<2> (Msub__old_result_3_cy<2>)
-     XORCY:CI->O           3   0.699   0.520  Msub__old_result_3_xor<3> (_old_result_3<3>)
-     LUT3:I1->O            1   0.612   0.000  Mmux__old_result_5_519 (Mmux__old_result_5_519)
-     MUXF5:I1->O           1   0.278   0.000  Mmux__old_result_5_4_f5_8 (Mmux__old_result_5_4_f59)
-     MUXF6:I0->O           2   0.451   0.532  Mmux__old_result_5_2_f6_8 (_old_result_5<3>)
-     LUT3:I0->O            1   0.612   0.360  zero_cmp_eq000039_SW0 (N6)
-     LUT4:I3->O            1   0.612   0.509  zero_cmp_eq000039 (zero_cmp_eq000039)
-     LUT4:I0->O            1   0.612   0.360  zero_cmp_eq000083_SW0 (N8)
-     LUT4:I3->O            1   0.612   0.000  zero_cmp_eq000083 (zero_cmp_eq0000)
+     IBUF:I->O             7   1.106   0.754  A_0_IBUF (A_0_IBUF)
+     LUT2:I0->O            1   0.612   0.000  Msub__old_r_4_lut<0> (Msub__old_r_4_lut<0>)
+     MUXCY:S->O            1   0.404   0.000  Msub__old_r_4_cy<0> (Msub__old_r_4_cy<0>)
+     MUXCY:CI->O           1   0.051   0.000  Msub__old_r_4_cy<1> (Msub__old_r_4_cy<1>)
+     MUXCY:CI->O           1   0.051   0.000  Msub__old_r_4_cy<2> (Msub__old_r_4_cy<2>)
+     MUXCY:CI->O           1   0.051   0.000  Msub__old_r_4_cy<3> (Msub__old_r_4_cy<3>)
+     MUXCY:CI->O           1   0.051   0.000  Msub__old_r_4_cy<4> (Msub__old_r_4_cy<4>)
+     MUXCY:CI->O           1   0.051   0.000  Msub__old_r_4_cy<5> (Msub__old_r_4_cy<5>)
+     MUXCY:CI->O           1   0.051   0.000  Msub__old_r_4_cy<6> (Msub__old_r_4_cy<6>)
+     MUXCY:CI->O           1   0.051   0.000  Msub__old_r_4_cy<7> (Msub__old_r_4_cy<7>)
+     MUXCY:CI->O           1   0.051   0.000  Msub__old_r_4_cy<8> (Msub__old_r_4_cy<8>)
+     MUXCY:CI->O           1   0.051   0.000  Msub__old_r_4_cy<9> (Msub__old_r_4_cy<9>)
+     MUXCY:CI->O           1   0.051   0.000  Msub__old_r_4_cy<10> (Msub__old_r_4_cy<10>)
+     MUXCY:CI->O           1   0.051   0.000  Msub__old_r_4_cy<11> (Msub__old_r_4_cy<11>)
+     MUXCY:CI->O           1   0.051   0.000  Msub__old_r_4_cy<12> (Msub__old_r_4_cy<12>)
+     XORCY:CI->O           1   0.699   0.426  Msub__old_r_4_xor<13> (_old_r_4<13>)
+     LUT4:I1->O            1   0.612   0.509  r<13>95 (r<13>95)
+     LUT4:I0->O            2   0.612   0.410  r<13>138 (result_13_OBUF)
+     LUT4:I2->O            1   0.612   0.509  zero_cmp_eq000031 (zero_cmp_eq000031)
+     LUT4:I0->O            1   0.612   0.360  zero_cmp_eq000094_SW0 (N93)
+     LUT4:I3->O            1   0.612   0.000  zero_cmp_eq000094 (zero_cmp_eq0000)
      LD_1:D                    0.268          zero
     ----------------------------------------
-    Total                     10.060ns (6.929ns logic, 3.130ns route)
-                                       (68.9% logic, 31.1% route)
+    Total                      9.735ns (6.767ns logic, 2.968ns route)
+                                       (69.5% logic, 30.5% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'reset'
@@ -371,52 +377,52 @@ Offset:              4.114ns (Levels of Logic = 1)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 1775 / 16
+  Total number of paths / destination ports: 1822 / 16
 -------------------------------------------------------------------------
-Delay:               10.788ns (Levels of Logic = 22)
-  Source:            A<1> (PAD)
+Delay:               10.380ns (Levels of Logic = 22)
+  Source:            A<0> (PAD)
   Destination:       result<15> (PAD)
 
-  Data Path: A<1> to result<15>
+  Data Path: A<0> to result<15>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             9   1.106   0.849  A_1_IBUF (A_1_IBUF)
-     LUT2:I0->O            1   0.612   0.000  Msub__old_result_3_lut<1> (Msub__old_result_3_lut<1>)
-     MUXCY:S->O            1   0.404   0.000  Msub__old_result_3_cy<1> (Msub__old_result_3_cy<1>)
-     MUXCY:CI->O           1   0.051   0.000  Msub__old_result_3_cy<2> (Msub__old_result_3_cy<2>)
-     MUXCY:CI->O           1   0.051   0.000  Msub__old_result_3_cy<3> (Msub__old_result_3_cy<3>)
-     MUXCY:CI->O           1   0.051   0.000  Msub__old_result_3_cy<4> (Msub__old_result_3_cy<4>)
-     MUXCY:CI->O           1   0.051   0.000  Msub__old_result_3_cy<5> (Msub__old_result_3_cy<5>)
-     MUXCY:CI->O           1   0.051   0.000  Msub__old_result_3_cy<6> (Msub__old_result_3_cy<6>)
-     MUXCY:CI->O           1   0.051   0.000  Msub__old_result_3_cy<7> (Msub__old_result_3_cy<7>)
-     MUXCY:CI->O           1   0.051   0.000  Msub__old_result_3_cy<8> (Msub__old_result_3_cy<8>)
-     MUXCY:CI->O           1   0.051   0.000  Msub__old_result_3_cy<9> (Msub__old_result_3_cy<9>)
-     MUXCY:CI->O           1   0.051   0.000  Msub__old_result_3_cy<10> (Msub__old_result_3_cy<10>)
-     MUXCY:CI->O           1   0.051   0.000  Msub__old_result_3_cy<11> (Msub__old_result_3_cy<11>)
-     MUXCY:CI->O           1   0.051   0.000  Msub__old_result_3_cy<12> (Msub__old_result_3_cy<12>)
-     MUXCY:CI->O           1   0.051   0.000  Msub__old_result_3_cy<13> (Msub__old_result_3_cy<13>)
-     MUXCY:CI->O           0   0.051   0.000  Msub__old_result_3_cy<14> (Msub__old_result_3_cy<14>)
-     XORCY:CI->O           3   0.699   0.520  Msub__old_result_3_xor<15> (_old_result_3<15>)
-     LUT3:I1->O            1   0.612   0.000  Mmux__old_result_5_513 (Mmux__old_result_5_513)
-     MUXF5:I1->O           1   0.278   0.000  Mmux__old_result_5_4_f5_5 (Mmux__old_result_5_4_f56)
-     MUXF6:I0->O           2   0.451   0.449  Mmux__old_result_5_2_f6_5 (_old_result_5<15>1)
-     LUT2:I1->O            1   0.612   0.357  result<15>1 (result_15_OBUF)
+     IBUF:I->O             7   1.106   0.754  A_0_IBUF (A_0_IBUF)
+     LUT2:I0->O            1   0.612   0.000  Madd__old_r_1_lut<0> (Madd__old_r_1_lut<0>)
+     MUXCY:S->O            1   0.404   0.000  Madd__old_r_1_cy<0> (Madd__old_r_1_cy<0>)
+     MUXCY:CI->O           1   0.051   0.000  Madd__old_r_1_cy<1> (Madd__old_r_1_cy<1>)
+     MUXCY:CI->O           1   0.051   0.000  Madd__old_r_1_cy<2> (Madd__old_r_1_cy<2>)
+     MUXCY:CI->O           1   0.051   0.000  Madd__old_r_1_cy<3> (Madd__old_r_1_cy<3>)
+     MUXCY:CI->O           1   0.051   0.000  Madd__old_r_1_cy<4> (Madd__old_r_1_cy<4>)
+     MUXCY:CI->O           1   0.051   0.000  Madd__old_r_1_cy<5> (Madd__old_r_1_cy<5>)
+     MUXCY:CI->O           1   0.051   0.000  Madd__old_r_1_cy<6> (Madd__old_r_1_cy<6>)
+     MUXCY:CI->O           1   0.051   0.000  Madd__old_r_1_cy<7> (Madd__old_r_1_cy<7>)
+     MUXCY:CI->O           1   0.051   0.000  Madd__old_r_1_cy<8> (Madd__old_r_1_cy<8>)
+     MUXCY:CI->O           1   0.051   0.000  Madd__old_r_1_cy<9> (Madd__old_r_1_cy<9>)
+     MUXCY:CI->O           1   0.051   0.000  Madd__old_r_1_cy<10> (Madd__old_r_1_cy<10>)
+     MUXCY:CI->O           1   0.051   0.000  Madd__old_r_1_cy<11> (Madd__old_r_1_cy<11>)
+     MUXCY:CI->O           1   0.051   0.000  Madd__old_r_1_cy<12> (Madd__old_r_1_cy<12>)
+     MUXCY:CI->O           1   0.051   0.000  Madd__old_r_1_cy<13> (Madd__old_r_1_cy<13>)
+     MUXCY:CI->O           0   0.051   0.000  Madd__old_r_1_cy<14> (Madd__old_r_1_cy<14>)
+     XORCY:CI->O           5   0.699   0.607  Madd__old_r_1_xor<15> (_old_r_1<15>)
+     LUT4:I1->O            1   0.612   0.000  r<15>83_F (N101)
+     MUXF5:I0->O           1   0.278   0.426  r<15>83 (r<15>83)
+     LUT4:I1->O            2   0.612   0.380  r<15>120 (result_15_OBUF)
      OBUF:I->O                 3.169          result_15_OBUF (result<15>)
     ----------------------------------------
-    Total                     10.788ns (8.613ns logic, 2.175ns route)
-                                       (79.8% logic, 20.2% route)
+    Total                     10.380ns (8.213ns logic, 2.167ns route)
+                                       (79.1% logic, 20.9% route)
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 3.00 secs
-Total CPU time to Xst completion: 3.58 secs
+Total REAL time to Xst completion: 4.00 secs
+Total CPU time to Xst completion: 3.65 secs
  
 --> 
 
 
-Total memory usage is 615872 kilobytes
+Total memory usage is 615932 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    4 (   0 filtered)

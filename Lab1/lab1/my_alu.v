@@ -3,12 +3,12 @@
 //  Constant definitions 
 
 module my_alu # ( parameter NUMBITS = 16 ) (
-    input wire clk, 
+    input wire clk,
     input wire reset ,  
     input  wire[NUMBITS-1:0] A, 
     input  wire[NUMBITS-1:0] B, 
     input wire [2:0]opcode, 
-    output reg [NUMBITS-1:0] result,  
+    output signed [NUMBITS-1:0] result,  
     output reg carryout ,
     output reg overflow , 
     output reg zero  );
@@ -27,7 +27,7 @@ assign result = r;
 always @ * begin
 	if(reset) 
 		begin
-			result =0; 
+			r =0; 
 		end 
 	else begin 
 	carryout =0; 
@@ -38,7 +38,7 @@ always @ * begin
 	case (opcode) 
 	      3'b000: begin 
 			        r = A+B ; 
-						if (result <A && r < B)begin 
+						if (r <A && r < B)begin 
 						carryout =1; 
 						end 
 						else begin 

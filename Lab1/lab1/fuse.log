@@ -1,0 +1,22 @@
+Running: /opt/Xilinx/14.6/ISE_DS/ISE/bin/lin64/unwrapped/fuse -relaunch -intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "/home/csmajs/taror002/Desktop/Lab1/lab1/myalutb_isim_beh.exe" -prj "/home/csmajs/taror002/Desktop/Lab1/lab1/myalutb_beh.prj" "work.myalutb" "work.glbl" 
+ISim P.68d (signature 0xfbc00daa)
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Determining compilation order of HDL files
+Analyzing Verilog file "/home/csmajs/taror002/Desktop/Lab1/lab1/my_alu.v" into library work
+Analyzing Verilog file "/home/csmajs/taror002/Desktop/Lab1/lab1/my_alu_tb.v" into library work
+Analyzing Verilog file "/opt/Xilinx/14.6/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 94656 KB
+Fuse CPU Usage: 950 ms
+Compiling module my_alu(NUMBITS=8)
+Compiling module myalutb
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 3 Verilog Units
+Built simulation executable /home/csmajs/taror002/Desktop/Lab1/lab1/myalutb_isim_beh.exe
+Fuse Memory Usage: 1179336 KB
+Fuse CPU Usage: 960 ms
+GCC CPU Usage: 110 ms
