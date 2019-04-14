@@ -21,7 +21,7 @@ wire signed [NUMBITS-1:0] C;
 wire signed [NUMBITS-1:0] D;
 assign C = A; 
 assign D = B; 
-reg signed [NUMBITS-1:0] r; 
+	reg signed [NUMBITS-1:0] r; //signed results
 assign result = r; 
 
 always @ * begin
@@ -80,7 +80,7 @@ always @ * begin
 						else begin overflow =0; end 
 					end 
 			3'b100: begin 
-                     r = A & B	;
+                                                         r = A & B	;
 					  end 
 			3'b101: begin 
 							r = A | B; 
@@ -98,7 +98,7 @@ always @ * begin
 						end
 			endcase
 			
-			if(result ==0) 
+			if(r ==0) 
 				begin 
 				   zero = 1; 
 				end 
