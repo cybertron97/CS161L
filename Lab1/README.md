@@ -1,5 +1,5 @@
-<h1><b>CS161 L</h1></b>
-<h2><p>Lab 1</p></h2> 
+<h1><b>CS161 L</b>
+<p>Lab 1</p></h1> 
 <h3>Tanish Arora</h3>
 <p><b>Files</b> : my_alu.v
         my_alu_tb.v
