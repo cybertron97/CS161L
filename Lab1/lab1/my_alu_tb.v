@@ -54,57 +54,47 @@ module myalutb;
 		// Testing unsigned additions 
 		// --------------------------------------------- 
 		opcode = 3'b000 ; 
-		A = 8'hFF ;
-   	B = 8'h01 ;
-		R = 8'h00 ; 
-		
-	    #100 ; // Wait 
-     
-		$display("TC11 Unsigned Add ");
-		if (R != result) $display  ("Result is wrong");
-		if (zero != 1'b1) $display ("Zero  is wrong");
-		if (carryout != 1'b1) $display ("Carryout is wrong");
 		
 		A = 8'h01 ;
-   	B = 8'h00 ;
+   	        B = 8'h00 ;
 		R = 8'h01 ; 
 		
-	    #100 ; // Wait 
+	         #100 ; // Wait 
      
-		$display("TC12 Unsigned Add ");
+		$display("TC11 Unsigned Add ");
 		if (R != result) $display  ("Result is wrong");
 		if (zero != 1'b0) $display ("Zero  is wrong");
 		if (carryout != 1'b0) $display ("Carryout is wrong");
 		
 		A = 8'hff ;
-   	B = 8'h01 ;
+   		B = 8'h01 ;
 		R = 8'h00 ; 
 		
 	    #100 ; // Wait 
      
-		$display("TC13 Unsigned Add ");
+		$display("TC12 Unsigned Add ");
 		if (R != result) $display  ("Result is wrong");
 		if (zero != 1'b1) $display ("Zero  is wrong");
 		if (carryout != 1'b1) $display ("Carryout is wrong");
 		
 		A = 8'h0f ;
-   	B = 8'hf0 ;
+   		B = 8'hf0 ;
 		R = 8'hff ; 
 		
 	    #100 ; // Wait 
      
-		$display("TC14 Unsigned Add ");
+		$display("TC13 Unsigned Add ");
 		if (R != result) $display  ("Result is wrong");
 		if (zero != 1'b0) $display ("Zero  is wrong");
 		if (carryout != 1'b0) $display ("Carryout is wrong");
 		
 		A = 8'h0f ;
-   	B = 8'h0f ;
+   		B = 8'h0f ;
 		R = 8'h1e ; 
 		
 	    #100 ; // Wait 
      
-		$display("TC15 Unsigned Add ");
+		$display("TC14 Unsigned Add ");
 		if (R != result) $display  ("Result is wrong");
 		if (zero != 1'b0) $display ("Zero  is wrong");
 		if (carryout != 1'b0) $display ("Carryout is wrong");
@@ -123,7 +113,7 @@ module myalutb;
 		
 	    #100 ; // Wait 
      
-		$display("TC16 Unsigned subs ");
+		$display("TC15 Unsigned subs ");
 		if (R != result) $display  ("Result is wrong");
 		if (zero != 1'b1) $display ("Zero  is wrong");
 		if (carryout != 1'b0) $display ("Carryout is wrong");
@@ -134,7 +124,7 @@ module myalutb;
 		
 	    #100 ; // Wait 
      
-		$display("TC17 Unsigned subs ");
+		$display("TC16 Unsigned subs ");
 		if (R != result) $display  ("Result is wrong");
 		if (zero != 1'b1) $display ("Zero  is wrong");
 		if (carryout != 1'b0) $display ("Carryout is wrong");
@@ -145,7 +135,7 @@ module myalutb;
 		
 	    #100 ; // Wait 
      
-		$display("TC18 Unsigned subs ");
+		$display("TC17 Unsigned subs ");
 		if (R != result) $display  ("Result is wrong");
 		if (zero != 1'b0) $display ("Zero  is wrong");
 		if (carryout != 1'b0) $display ("Carryout is wrong");
@@ -156,7 +146,7 @@ module myalutb;
 		
 	    #100 ; // Wait 
      
-		$display("TC19 Unsigned subs ");
+		$display("TC18 Unsigned subs ");
 		if (R != result) $display  ("Result is wrong");
 		if (zero != 1'b0) $display ("Zero  is wrong");
 		if (carryout != 1'b0) $display ("Carryout is wrong");
@@ -171,7 +161,7 @@ module myalutb;
 		R=8'h0B;
 		
 		#100; 
-		$display("TC20 signed adds ");
+		$display("TC19 signed adds ");
 		if (R != result) $display  ("Result is wrong");
 		if (zero != 1'b0) $display ("Zero  is wrong");
 		if (overflow != 1'b0) $display ("Overflow is wrong");
@@ -181,7 +171,7 @@ module myalutb;
 		R=8'hAF;
 		
 		#100; 
-		$display("TC21 signed adds ");
+		$display("TC20 signed adds ");
 		if (R != result) $display  ("Result is wrong");
 		if (zero != 1'b0) $display ("Zero  is wrong");
 		if (overflow != 1'b0) $display ("Overflow is wrong");
@@ -191,7 +181,7 @@ module myalutb;
 		R=8'h00;
 		
 		#100; 
-		$display("TC22 signed adds ");
+		$display("TC21 signed adds ");
 		if (R != result) $display  ("Result is wrong");
 		if (zero != 1'b1) $display ("Zero  is wrong");
 		if (overflow != 1'b0) $display ("Carryout is wrong");
@@ -201,7 +191,7 @@ module myalutb;
 		R = $signed(~({8'h0f})) + $signed(2'b01);
 		
 		#100;
-		$display("TC23 Signed adds ");
+		$display("TC22 Signed adds ");
 		if (R != result) $display  ("Result is wrong");
 		if (zero != 1'b0) $display ("Zero  is wrong");
 		if (overflow != 1'b0) $display ("Overflow is wrong");
@@ -211,7 +201,7 @@ module myalutb;
 		R = $signed(~({8'h01})) + $signed(2'b01);
 		
 		#100;
-		$display("TC24 Signed adds ");
+		$display("TC23 Signed adds ");
 		if (R != result) $display  ("Result is wrong");
 		if (zero != 1'b0) $display ("Zero  is wrong");
 		if (overflow != 1'b0) $display ("Overflow is wrong");
@@ -226,7 +216,7 @@ module myalutb;
 		B = $signed(~({8'h08})) + $signed(2'b01);
 		R = 8'h10;
 		#100
-		$display("TC25 Signed subs ");
+		$display("TC24 Signed subs ");
 		if (R != result) $display  ("Result is wrong");
 		if (zero != 1'b0) $display ("Zero  is wrong");
 		if (overflow != 1'b0) $display ("Overflow is wrong");
@@ -236,16 +226,16 @@ module myalutb;
 	        B = $signed({8'h08});
 		R = 8'h00;
 		#100
-		$display("TC26 Signed subs ");
+		$display("TC25 Signed subs ");
 		if (R != result) $display  ("Result is wrong");
-		if (zero != 1'b0) $display ("Zero  is wrong");
+		if (zero != 1'b1) $display ("Zero  is wrong");
 		if (overflow != 1'b0) $display ("Overflow is wrong");
 		
 		A = $signed({8'h08});
 		B = $signed({8'h01});
 		R = 8'h07;
 		#100
-		$display("TC27 Signed subs ");
+		$display("TC26 Signed subs ");
 		if (R != result) $display  ("Result is wrong");
 		if (zero != 1'b0) $display ("Zero  is wrong");
 		if (overflow != 1'b0) $display ("Overflow is wrong");
@@ -255,7 +245,7 @@ module myalutb;
 		R = $signed({8'h7f}); 
 		
 		#100;
-		$display("TC28 Signed subs ");
+		$display("TC27 Signed subs ");
 		if (R != result) $display  ("Result is wrong %h %h " , R, result);
 		if (zero != 1'b0) $display ("Zero  is wrong");
 		if (overflow != 1'b1) $display ("Overflow is wrong");
@@ -269,7 +259,7 @@ module myalutb;
 		B=8'hff;
 		R=8'h00;
 		#100
-		$display("TC29 Ands");
+		$display("TC28 Ands");
 		if (R != result) $display  ("Result is wrong %h %h " , R, result);
 		if (zero != 1'b1) $display ("Zero  is wrong");
 		if (overflow != 1'b0) $display ("Overflow is wrong");
@@ -279,7 +269,7 @@ module myalutb;
 		B=8'hff;
 		R=8'h0f;
 		#100
-		$display("TC30 Ands");
+		$display("TC29 Ands");
 		if (R != result) $display  ("Result is wrong %h %h " , R, result);
 		if (zero != 1'b0) $display ("Zero  is wrong");
 		if (overflow != 1'b0) $display ("Overflow is wrong");
@@ -294,7 +284,7 @@ module myalutb;
 		A=8'h00;
 		B=8'hff;
 		R=8'hff;
-		$display("TC31 OR");
+		$display("TC30 or");
 		#100
 		if (R != result) $display  ("Result is wrong %h %h " , R, result);
 		if (zero != 1'b0) $display ("Zero  is wrong");
@@ -305,7 +295,7 @@ module myalutb;
 		B=8'h0f;
 		R=8'h1f;
 		#100
-		$display("TC32 OR");
+		$display("TC31 or");
 		if (R != result) $display  ("Result is wrong %h %h " , R, result);
 		if (zero != 1'b0) $display ("Zero  is wrong");
 		if (overflow != 1'b0) $display ("Overflow is wrong");
@@ -319,7 +309,7 @@ module myalutb;
 		B=8'hf0;
 		R=8'hff;
 		#100
-		$display("TC33 XOR");
+		$display("TC32 xor");
 		if (R != result) $display  ("Result is wrong %h %h " , R, result);
 		if (zero != 1'b0) $display ("Zero  is wrong");
 		if (overflow != 1'b0) $display ("Overflow is wrong");
@@ -330,7 +320,7 @@ module myalutb;
 		B=8'hff;
 		R=8'h00;
 		#100
-		$display("TC34 XOR");
+		$display("TC33 xor");
 		if (R != result) $display  ("Result is wrong %h %h " , R, result);
 		if (zero != 1'b1) $display ("Zero  is wrong");
 		if (overflow != 1'b0) $display ("Overflow is wrong");
@@ -345,7 +335,7 @@ module myalutb;
 		A = 8'h10 ; 
 		R = 8'h08 ; 
 		#100;
-		$display("TC35 Divs ");
+		$display("TC34 Div");
 		if (R != result) $display  ("Result is wrong %h %h " , R, result);
 		if (zero != 1'b0) $display ("Zero  is wrong");
 		if (overflow != 1'b0) $display ("Overflow is wrong");
@@ -354,7 +344,7 @@ module myalutb;
 		A = 8'hFF ; 
 		R = 8'h7F ; 
 		#100;
-		$display("TC36 Divs ");
+		$display("TC35 Div");
 		if (R != result) $display  ("Result is wrong %h %h " , R, result);
 		if (zero != 1'b0) $display ("Zero  is wrong");
 		if (overflow != 1'b0) $display ("Overflow is wrong");
