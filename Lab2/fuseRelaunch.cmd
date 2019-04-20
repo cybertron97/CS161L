@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "/home/csmajs/taror002/Desktop/CS161L-master/Lab2/test_float_tb_isim_beh.exe" -prj "/home/csmajs/taror002/Desktop/CS161L-master/Lab2/test_float_tb_beh.prj" "work.test_float_tb" "work.glbl" 

@@ -24,12 +24,12 @@ module fixedfloat(
     input wire[31:0] targetnumber,
     input wire[4:0] fixpointpos,
     input wire opcode,
-    output wire[31:0] result
+    output reg[31:0] result
     );
-wire [31:0] floatresult; 
-wire [31:0] fixresult; 
-wire [31:0] targetnumber_b;
-wire [4:0] fixpointpos_c;
+reg [31:0] floatresult; 
+reg [31:0] fixresult; 
+reg [31:0] targetnumber_b;
+reg [4:0] fixpointpos_c;
 
 integer i; 
 integer count; 
@@ -42,8 +42,8 @@ reg [31:0] temp;
 always @(*) begin 
 targetnumber_b= targetnumber; 
 fixpointpos_c = fixpointpos; 
-float_r= 32'h0;
-fix_r=32'h0; 
+floatresult= 32'h0;
+fixresult=32'h0; 
 
 // -------------------------------------------
 // From fix to float (Part 1)

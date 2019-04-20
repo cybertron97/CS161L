@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2019-04-15T19:07:18</DateModified>
+  <DateModified>2019-04-20T11:38:05</DateModified>
   <ModuleName>fixedfloat</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>/home/csmajs/taror002/Desktop/Lab2/iseconfig/fixedfloat.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/home/csmajs/taror002/Desktop/Lab2</ImplementationReportsDirectory>
+  <SavedFilePath>/home/csmajs/taror002/Desktop/CS161L-master/Lab2/iseconfig/fixedfloat.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>/home/csmajs/taror002/Desktop/CS161L-master/Lab2/</ImplementationReportsDirectory>
   <DateInitialized>2019-04-15T19:07:18</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

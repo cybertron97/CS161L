@@ -1,0 +1,28 @@
+Command line:
+   test_float_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  41209
+
+Sat Apr 20 12:22:01 2019
+
+
+ Elaboration Time: 0.02 sec
+
+ Current Memory Usage: 267.104 Meg
+
+ Total Signals          : 19
+ Total Nets             : 85
+ Total Signal Drivers   : 11
+ Total Blocks           : 3
+ Total Primitive Blocks : 2
+ Total Processes        : 16
+ Total Traceable Variables  : 36
+ Total Scalar Nets and Variables : 530
+
+ Total Simulation Time: 0.08 sec
+
+ Current Memory Usage: 342.606 Meg
+
+Sat Apr 20 12:23:57 2019
+
