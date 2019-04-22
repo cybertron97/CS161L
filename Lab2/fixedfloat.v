@@ -28,20 +28,20 @@ module fixedfloat(
     );
 reg [31:0] floatresult; 
 reg [31:0] fixresult; 
-reg [31:0] targetnumber_b;
-reg [4:0] fixpointpos_c;
+reg [31:0] a;
+reg [4:0] b;
 
 integer i; 
 integer count; 
 reg sign =0; 
 reg [7:0] exp; 
 integer exp2;
-reg[22:0]mantissa;
+reg[22:0]fraction;
 reg [31:0] temp; 
 
 always @(*) begin 
-targetnumber_b= targetnumber; 
-fixpointpos_c = fixpointpos; 
+a= targetnumber; 
+b = fixpointpos; 
 floatresult= 32'h0;
 fixresult=32'h0; 
 
@@ -53,10 +53,10 @@ fixresult=32'h0;
 case (opcode) 
 	1'b00: 
 begin 
-	if (targetnumber_b[31]==1)
+	if (a[31]==1)
 	begin 
 		sign= 1'b1; 
-		targetnumber_b=-targetnumber_b; 
+		a=-a; 
 	end 
 	for (i=0; i<31; i=i+1) 
 	begin
@@ -65,11 +65,11 @@ begin
 			count =i; 
 		end
 	end 
-	exp = (count - fixpointpos_c) +127; 
+	exp = (count - b) +127; 
 	
-	targetnumber_b= targetnumber_b <<(31-count); 
-	mantissa = targetnumber_b [31:8] ; 
-	 floatresult = {{sign},{exp},{mantissa}}; 
+	a= a <<(31-count); 
+	fraction = a [31:8] ; 
+	 floatresult = {{sign},{exp},{fraction}}; 
 end 
 // -------------------------------------------	
 // From float to fix (Part 2)
@@ -78,10 +78,10 @@ end
 
 1'b01:
 begin 
- sign = targetnumber_b[31]; 
- exp2= targetnumber_b[30:23]-127; 
- mantissa = targetnumber_b[22:0];
- count= 23-(exp2+fixpointpos_c); 
+ sign = a[31]; 
+ exp2= a[30:23]-127; 
+ fraction = a[22:0];
+ count= 23-(exp2+b); 
   if (count>0)
   begin 
 	temp = temp >> count; 
