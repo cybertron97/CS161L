@@ -48,7 +48,7 @@ module cs161_datapath(
 // Debug Signals
 // ----------------------------------------------
   
- output wire[`WORD_SIZE-1:0]  prog_count 
+ output wire[`WORD_SIZE-1:0]  prog_count; 
  output wire[5:0] instr_opcode   ;  
  output wire[4:0] reg1_addr     ;   
  output wire[`WORD_SIZE-1:0] reg1_data ;
