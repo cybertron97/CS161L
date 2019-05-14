@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "/home/csmajs/taror002/Desktop/lab4/cs161_processor_testbench_isim_beh.exe" -prj "/home/csmajs/taror002/Desktop/lab4/cs161_processor_testbench_beh.prj" "work.cs161_processor_testbench" "work.glbl" 
